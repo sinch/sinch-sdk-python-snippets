@@ -7,7 +7,7 @@ query = {
   "regionCode": "US",
   "type": "LOCAL"
 }
-response = requests.get(url, params=query, auth=('YOUR_username','YOUR_password'))
+response = requests.get(url, params=query, auth=('YOUR_username', 'YOUR_password'))
 
 data = response.json()
 print(data)

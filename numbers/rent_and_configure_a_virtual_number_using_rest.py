@@ -25,7 +25,7 @@ payload = {
 
 headers = {"Content-Type": "application/json"}
 
-response = requests.post(url, json=payload, headers=headers, auth=('YOUR_username','YOUR_password'))
+response = requests.post(url, json=payload, headers=headers, auth=('YOUR_username', 'YOUR_password'))
 
 data = response.json()
 print(data)
