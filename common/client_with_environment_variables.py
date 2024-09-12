@@ -2,6 +2,7 @@ import os
 from sinch import SinchClient
 
 sinch_client = SinchClient(
-    application_key=os.getenv("APPLICATION_KEY"),
-    application_secret=os.getenv("APPLICATION_SECRET")
+    key_id=os.getenv("KEY_ID"),
+    key_secret=os.getenv("KEY_SECRET"),
+    project_id=os.getenv("PROJECT_ID")
 )

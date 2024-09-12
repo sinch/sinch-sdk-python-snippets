@@ -1,6 +1,7 @@
 from sinch import SinchClient
 
 sinch_client = SinchClient(
-    application_key="YOUR_application_key",
-    application_secret="YOUR_application_secret"
+    key_id="YOUR_KEY_ID",
+    key_secret="YOUR_KEY_SECRET",
+    project_id="YOUR_PROJECT_ID"
 )
