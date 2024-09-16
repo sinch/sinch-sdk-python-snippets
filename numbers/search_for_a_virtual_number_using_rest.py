@@ -1,13 +1,17 @@
 import requests
 
-project_id = "YOUR_projectId"
-url = "https://numbers.api.sinch.com/v1/projects/" + project_id + "/availableNumbers"
+PROJECT_ID = "YOUR_PROJECT_ID"
+URL = "https://numbers.api.sinch.com/v1/projects/" + PROJECT_ID + "/availableNumbers"
 
-query = {
-  "regionCode": "US",
-  "type": "LOCAL"
-}
-response = requests.get(url, params=query, auth=('YOUR_username', 'YOUR_password'))
+
+response = requests.get(
+    URL,
+    params={
+        "regionCode": "US",
+        "type": "LOCAL"
+    },
+    auth=('YOUR_USERNAME', 'YOUR_PASSWORD')
+)
 
 data = response.json()
 print(data)
