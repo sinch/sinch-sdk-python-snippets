@@ -1,28 +1,31 @@
 import requests
 
-key = ""
-secret = ""
-from_number = ""
-to = ""
-locale = ""
-url = "https://calling.api.sinch.com/calling/v1/callouts"
+KEY = ""
+SECRET = ""
+FROM_NUMBER = ""
+TO = ""
+LOCALE = ""
+URL = "https://calling.api.sinch.com/calling/v1/callouts"
 
 payload = {
-  "method": "ttsCallout",
-  "ttsCallout": {
-    "cli": from_number,
-    "destination": {
-      "type": "number",
-      "endpoint": to
-    },
-    "locale": locale,
-    "text": "Hello, this is a call from Sinch. Congratulations! You made your first call."
-  }
+    "method": "ttsCallout",
+    "ttsCallout": {
+        "cli": FROM_NUMBER,
+        "destination": {
+            "type": "number",
+            "endpoint": TO
+        },
+        "locale": LOCALE,
+        "text": "Hello, this is a call from Sinch. Congratulations! You made your first call."
+    }
 }
 
-headers = {"Content-Type": "application/json"}
-
-response = requests.post(url, json=payload, headers=headers, auth=(key, secret))
+response = requests.post(
+    URL,
+    json=payload,
+    headers={"Content-Type": "application/json"},
+    auth=(KEY, SECRET)
+)
 
 data = response.json()
 print(data)
