@@ -1,31 +1,33 @@
 import requests
 
-project_id = "YOUR_projectId"
-phone_number = "YOUR_phoneNumber"
-url = "https://numbers.api.sinch.com/v1/projects/" + project_id + "/availableNumbers/" + phone_number + ":rent"
+PROJECT_ID = "YOUR_PROJECT_ID"
+PHONE_NUMBER = "YOUR_PHONE_NUMBER"
+URL = "https://numbers.api.sinch.com/v1/projects/" + PROJECT_ID + "/availableNumbers/" + PHONE_NUMBER + ":rent"
 
 payload = {
-  "smsConfiguration": {
-    "servicePlanId": "YOUR_servicePlanId",
-    "scheduledProvisioning": {
-      "status": "WAITING",
-      "errorCodes": [
-        "INTERNAL_ERROR"
-      ]
+    "smsConfiguration": {
+        "servicePlanId": "YOUR_servicePlanId",
+        "scheduledProvisioning": {
+            "status": "WAITING",
+            "errorCodes": [
+                "INTERNAL_ERROR"
+            ]
+        },
+        "campaignId": "YOUR_10DLC_campaignId"
     },
-    "campaignId": "YOUR_10DLC_campaignId"
-  },
-  "voiceConfiguration": {
-    "appId": "YOUR_appId",
-    "scheduledProvisioning": {
-      "status": "WAITING"
+    "voiceConfiguration": {
+        "appId": "YOUR_appId",
+        "scheduledProvisioning": {
+            "status": "WAITING"
+        }
     }
-  }
 }
 
-headers = {"Content-Type": "application/json"}
-
-response = requests.post(url, json=payload, headers=headers, auth=('YOUR_username', 'YOUR_password'))
+response = requests.post(
+    URL,
+    json=payload,
+    auth=('YOUR_USERNAME', 'YOUR_PASSWORD')
+)
 
 data = response.json()
 print(data)
