@@ -1,7 +1,13 @@
+"""
+Sinch Python Snippet
+
+This snippet is available at https://github.com/sinch/sinch-sdk-python-snippets
+"""
+
 import os
 from dotenv import load_dotenv
-from sinch.domains.numbers.models.v1.types import SmsConfigurationDict
 from sinch import SinchClient
+from sinch.domains.numbers.models.v1.types import SmsConfigurationDict
 
 load_dotenv()
 
