@@ -19,24 +19,16 @@ sinch_client = SinchClient(
     key_secret=os.environ.get("SINCH_KEY_SECRET") or "MY_KEY_SECRET"
 )
 
+service_plan_id = os.environ.get("SINCH_SERVICE_PLAN_ID") or "MY_SERVICE_PLAN_ID"
 sms_configuration: SmsConfigurationDict = {
-    "service_plan_id": "SERVICE_PLAN_ID"
+    "service_plan_id": service_plan_id
 }
-voice_configuration: VoiceConfigurationDictType = {
-    "app_id": "APP_ID",
-    "type": "RTC"
-}
-number_pattern: NumberPatternDict = {
-    "pattern": "+1234",
-    "search_pattern": "START"
-}
+
 response = sinch_client.numbers.rent_any(
     region_code="US",
     type_="LOCAL",
     capabilities=["SMS", "VOICE"],
-    sms_configuration=sms_configuration,
-    voice_configuration=voice_configuration,
-    number_pattern=number_pattern
+    sms_configuration=sms_configuration
 )
 
 print("Rented Number:\n", response)

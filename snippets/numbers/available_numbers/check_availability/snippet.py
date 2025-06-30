@@ -21,4 +21,4 @@ response = sinch_client.numbers.check_availability(
     phone_number=phone_number
 )
 
-print("Released Number:\n", response)
+print("The phone number is available:\n", response)

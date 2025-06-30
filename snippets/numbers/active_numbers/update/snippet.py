@@ -7,7 +7,6 @@ This snippet is available at https://github.com/sinch/sinch-sdk-python-snippets
 import os
 from dotenv import load_dotenv
 from sinch import SinchClient
-from sinch.domains.numbers.models.v1.types import VoiceConfigurationDictType
 
 load_dotenv()
 
@@ -17,18 +16,12 @@ sinch_client = SinchClient(
     key_secret=os.environ.get("SINCH_KEY_SECRET") or "MY_KEY_SECRET"
 )
 
-phone_number = "PHONE_NUMBER"
-app_id = "APP_ID"
-display_name = "DISPLAY_NAME"
-voice_configuration: VoiceConfigurationDictType = {
-    "app_id": app_id,
-    "type": "RTC"
-}
+phone_number_to_update = os.environ.get("SINCH_PHONE_NUMBER") or "MY_SINCH_PHONE_NUMBER"
+updated_display_name = "Updated DISPLAY_NAME"
 
 response = sinch_client.numbers.update(
-    phone_number=phone_number,
-    display_name=display_name,
-    voice_configuration=voice_configuration
+    phone_number=phone_number_to_update,
+    display_name=updated_display_name
 )
 
 print("Updated Number:\n", response)
