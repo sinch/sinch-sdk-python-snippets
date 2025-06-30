@@ -7,9 +7,7 @@ This snippet is available at https://github.com/sinch/sinch-sdk-python-snippets
 import os
 from dotenv import load_dotenv
 from sinch import SinchClient
-from sinch.domains.numbers.models.v1.types import (
-    NumberPatternDict, SmsConfigurationDict, VoiceConfigurationDictType
-)
+from sinch.domains.numbers.models.v1.types import SmsConfigurationDict
 
 load_dotenv()
 
