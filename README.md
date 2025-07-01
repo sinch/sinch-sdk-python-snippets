@@ -15,7 +15,12 @@ This repository contains code snippets demonstrating usage of the
 ## Snippets execution settings
 When executing a snippet, you will need to provide some information about your Sinch account (credentials, Sinch virtual phone number, ...)
 
-This setting can be placed directly in the snippet source, or you can use an [environment file](.env), in which case the settings will be shared and used automatically by every snippet.
+This setting can be placed directly in the snippet source, or you can use an [environment file](.env.example), in which case the settings will be shared and used automatically by every snippet.
+Rename the `.env.example` file to `.env` and fill in the required values:
+
+```bash
+cp .env.example .env
+```
 
 Install dependencies using Poetry:
 
