@@ -17,9 +17,9 @@ sinch_client = SinchClient(
     key_secret=os.environ.get("SINCH_KEY_SECRET") or "MY_KEY_SECRET"
 )
 
-service_plan_id = os.environ.get("SINCH_SERVICE_PLAN_ID") or "MY_SERVICE_PLAN_ID"
+service_plan_id_to_associate_with_the_number = os.environ.get("SINCH_SERVICE_PLAN_ID") or "MY_SERVICE_PLAN_ID"
 sms_configuration: SmsConfigurationDict = {
-    "service_plan_id": service_plan_id
+    "service_plan_id": service_plan_id_to_associate_with_the_number
 }
 
 response = sinch_client.numbers.rent_any(
