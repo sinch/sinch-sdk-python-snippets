@@ -16,7 +16,7 @@ sinch_client = SinchClient(
     key_secret=os.environ.get("SINCH_KEY_SECRET") or "MY_KEY_SECRET"
 )
 
-phone_number = "PHONE_NUMBER_TO_BE_RELEASED"
+phone_number = os.environ.get("SINCH_PHONE_NUMBER") or "MY_SINCH_PHONE_NUMBER"
 released_number = sinch_client.numbers.release(
     phone_number=phone_number
 )

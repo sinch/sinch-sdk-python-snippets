@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "sinch-sdk-python-snippets"
+version = "0.1.0"
+description = "Code snippets demonstrating usage of the Sinch Python SDK"
+readme = "README.md"
+packages = [{include = "snippets"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+python-dotenv = "^1.0.0"
+# sinch = "^2.0.0"  # Uncomment once v2.0 is released
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
